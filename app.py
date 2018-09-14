@@ -14,7 +14,7 @@ outTempArr = []
 for item in tempArr:
     if len(item) > 0:
         outTempArr.append(item)
-print(outTempArr)
+#print(outTempArr)
 
 
 outDict = {}
@@ -24,7 +24,7 @@ while len(outTempArr) > 0:
     for i in range( outDict[temp] ):
         outTempArr.remove(temp)
 
-print(outDict)
+#print(outDict)
 
 
 # Создаем книку
@@ -34,16 +34,15 @@ outBook = xlwt.Workbook('utf8')
 outSheet = outBook.add_sheet('sheetname')
 
 # Заполняем ящейку (Строка, Колонка, Текст, Шрифт)
-# sheet.write(0,0,'text')
 
 row = 0
 
 for key in outDict:
-    print(key)
+    #print(key)
     column = 0
-    outSheet.write(row, column, key)
+    outSheet.write(row, column, int(key))
     column += 1
-    outSheet.write(row, column, outDict[key])
+    outSheet.write(row, column, int(outDict[key]))
     row += 1
 
 
